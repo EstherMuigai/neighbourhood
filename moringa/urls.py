@@ -5,4 +5,6 @@ from . import views
 
 urlpatterns=[
     url(r'^$',views.welcome,name = 'welcome'),
+    url(r'^accounts/profile/$',views.profile,name = 'profile'),
+    url(r'^timeline$',views.timeline,name = 'timeline'),
 ]
