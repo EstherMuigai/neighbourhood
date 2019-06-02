@@ -44,18 +44,33 @@
                         <a href="/accounts/password/change">Change Password</a>
                     </li>
                     <li>
-                        <a href="/edit">Edit Profile</a>
+                        <a href="" data-toggle="modal" data-target="#edit" style="color:gray;">Edit Profile</a>
                     </li>
                 </ul>
-                <img src="https://images.pexels.com/photos/838413/pexels-photo-838413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                <div class="modal fade" id="edit" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header" style="padding-left:20%;background-color: #E8DEDC;">
+                                <div class="row">
+                                        <form  action="{%url 'profile' %}" method="post" enctype="multipart/form-data" style="margin-top:10%;color: white;">
+                                            {% csrf_token %}
+                                        
+                                            {% bootstrap_form form layout='inline'%}
+                                            <input type="submit" class="btn" value="update" style="background-color:purple;color:white;">
+                                        </form>
+                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                <img src="{{user.profile.profile_pic}}"
                     class="img-fluid" id="ppic" alt="...">
                 <div class="card-body">
                     <h2>John Parker</h2>
-                    <h5 style="color: gray;">@jparker</h5>
-                    <h6 style="color: indigo;">FULL-STACK DEVELOPER</h6>
-                    <p class="card-text">This is the bio. Some quick example text to build on the card title and make up
-                        the bulk of the
-                        card's content.</p>
+                    <h5 style="color: gray;">@{{user.username}}</h5>
+                    <h6 style="color: indigo;">{{user.profile.job|upper}}</h6>
+                    <p class="card-text">{{user.profile.bio}}</p>
                     <div class="row" style="text-align:left;">
                         <div class="col-md-4 col-sm-4">
                             <a href=""><i class="fab fa-linkedin"></i> linkedin</a>

@@ -8,3 +8,5 @@ urlpatterns=[
     url(r'^accounts/profile/$',views.profile,name = 'profile'),
     url(r'^timeline$',views.timeline,name = 'timeline'),
 ]
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
