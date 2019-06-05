@@ -4,9 +4,6 @@ from django.contrib.auth.models import User
 from .forms import ProfileForm
 from .models import Profile
 
-def welcome(request):
-    return render(request, 'welcome.html')
-
 @login_required(login_url='/accounts/login/')
 def profile(request):
     current_user=request.user
