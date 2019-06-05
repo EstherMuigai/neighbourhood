@@ -38,6 +38,8 @@ class ProjectPictures(models.Model):
 
 class Score(models.Model):
     category = models.CharField(max_length =255,blank=False,null=False)
+    project = models.ForeignKey(Project,on_delete=models.CASCADE)
+    score = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.project
+        return self.category
