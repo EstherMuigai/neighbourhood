@@ -36,3 +36,10 @@ class HoodDetails(models.Model):
     def __str__(self):
         return f'{self.detail}'
 
+class Post(models.Model):
+    post = models.TextField()
+    user = models.ForeignKey(User,on_delete=models.CASCADE,blank=False,null=False)
+    neighbourhood = models.ForeignKey(Neighbourhood,on_delete=models.CASCADE,blank=False,null=False)
+
+    def __str__(self):
+        return f'{self.user}'
