@@ -20,7 +20,7 @@
             <div style="float: left;">
                     <ul class="nav">
                         <li>
-                            <a href="" class="nav-link" style="font-family: 'Pacifico', cursive;font-size:20px;">MoringaAwwwards</a>
+                            <a href="" class="nav-link" style="font-family: 'Righteous', cursive;font-size:20px;">Neighbourhood</a>
                         </li>
             </ul>
             </div>
@@ -30,7 +30,7 @@
                                 <a class='btn btn-default' href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{%url 'profile' %}">My Profile</a>
+                                <a class='btn btn-default' href="{%url 'profile' %}">My Profile</a>
                               </li>
                     {% if user.is_authenticated %}
                     <li class="dropdown" class="nav-item">
@@ -58,12 +58,6 @@
                         </li>
             
                         {% endif %}
-                    <li class="nav-item">
-                            <form action="" role="search" class="form-inline">
-                                <input type="text" style="background: transparent;" class="form-control" placeholder="Search by username"
-                                    name="username">
-                            </form>
-                        </li>
                 </ul>
             </div>
         </div>

@@ -1,19 +1,17 @@
 body {
-    font-family: 'Encode Sans Condensed', sans-serif;
-    background-image: url(https://viget.com/uploads/image/blog/grit.png);
-    background-color:#E8DEDC;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 #colored-nav {
-    background-color: #262626;
+    background-color: #00A6FB;
 }
 
 a {
-    color:grey;
+    color:black;
 }
 
 a:hover {
-    color:#00A6FB;
+    color:red;
 }
 
 #navwhole {
@@ -33,8 +31,10 @@ a:hover {
 
 #ppic {
     height:200px;
-    width:100%;
+    width:200px;
     margin-top:5%;
+    margin-left:20%;
+    border-radius:50%;
 }
 
 #parent {

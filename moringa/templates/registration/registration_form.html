@@ -1,13 +1,10 @@
 {%extends "registration/base.html"%} {% load bootstrap3 %}
 {% block content %}
 <div class="container-fluid">
-    <div class="container" style="height:10%;margin-left:50%;padding-top:5%;background-color:rgb(237,34,218,0.9);margin-top:2%;width:40%;border-radius:5%;color:white;">
+    <div class="container">
         <div class="row" style="margin-left:25%;margin-top:5%;">
-            <div class="col-md-b col-sm-8" style="text-align:center;font-size:50px;">
-                <i class="fas fa-crown"></i>
-            </div>
                 <div class="col-md-8 col-sm-8">
-                    <h4 id="title" style="padding-bottom:3%;font-family: 'Pacifico', cursive;">MoringaAwwwards</h4>
+                    <h4 id="title" style="padding-bottom:3%;font-family: 'Righteous', cursive;font-size:20px;">Neighbourhood</h4>
                 </div>
             </div>
     <div class="row">
@@ -23,7 +20,7 @@
                     {% csrf_token %}
                     {% bootstrap_form form layout='inline' %}
                     <div class="form-group" style="margin-left:40%;">
-                        <input type="submit" class="btn" style="color:white;background-color:purple;" value="Sign Up">
+                        <input type="submit" class="btn btn-primary"  value="Sign Up">
                     </div>
 
                     <input type="hidden" name="next" value="{{next}}">

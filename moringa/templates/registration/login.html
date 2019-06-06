@@ -1,13 +1,10 @@
 {%extends "registration/base.html"%}
 {% load bootstrap3 %}
 {% block content %}
-<div class="container" style="background-color:rgb(237,34,218,0.9);margin-top:15%;width:40%;border-radius:5%;color:white">
+<div class="container">
   <div class="row" style="margin-left:25%;margin-top:5%;">
-    <div class="col-md-b col-sm-8" style="text-align:center;font-size:50px;">
-        <i class="fas fa-crown"></i>
-    </div>
         <div class="col-md-8 col-sm-8">
-            <h4 id="title" style="padding-bottom:3%;font-family: 'Pacifico', cursive;">MoringaAwwwards</h4>
+            <h4 id="title" style="padding-bottom:3%;font-family: 'Righteous', cursive;font-size:20px;">Neighbourhood</h4>
         </div>
     </div>
   <div class="row" style="margin-top:3%;">
@@ -24,7 +21,7 @@
             {% bootstrap_form form layout='inline' %}
 
             <div class="form-group" style="margin-left:30%;margin-top:10%;">
-                <input type="submit" class="btn" value="Log In" style="color:white;background-color:purple;">
+                <input type="submit" class="btn btn-primary" value="Log In">
             </div>
 
             <input type="hidden" name="next" value="{{next}}">
