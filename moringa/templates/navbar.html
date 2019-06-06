@@ -17,14 +17,21 @@
                     <span class="icon-bar"></span>
                 </div>
             </div>
-            <div class="nav navbar-nav navbar-left">
+            <div style="float: left;">
+                    <ul class="nav">
+                        <li>
+                            <a href="" class="nav-link" style="font-family: 'Pacifico', cursive;font-size:20px;">MoringaAwwwards</a>
+                        </li>
+            </ul>
+            </div>
+            <div style="float:right;">
                 <ul class="nav">
-                    <li class="nav-item">
-                        <a href="" class="nav-link" style="font-family: 'Pacifico', cursive;">MoringaAwwwards</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">APIs</a>
-                    </li>
+                        <li class="nav-item">
+                                <a class='btn btn-default' href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{%url 'profile' %}">My Profile</a>
+                              </li>
                     {% if user.is_authenticated %}
                     <li class="dropdown" class="nav-item">
                         <a href="" class="nav-link" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -43,6 +50,9 @@
                         </ul>
                     </li>
                         {% else %}
+                        <li class="nav-item">
+                            <a class='btn btn-default' href="/accounts/register">Sign Up</a>
+                        </li>
                         <li class="nav-item">
                           <a class='btn btn-default' href="/accounts/login">Login</a>
                         </li>

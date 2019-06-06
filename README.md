@@ -3,10 +3,9 @@
 An application where users can:
 *   Sign up
 *   Sign in (authentication)
-*   Upload pictures
+*   Upload projects
 *   Follow other users and see their pictures
-*   Like other users pictures
-*   Comment on other users' pictures
+*   Like other users projects
 
 ## Getting Started
 
@@ -77,10 +76,9 @@ Find all the versions used in the requirements.txt or run the following command 
 ```
 pip freeze
 ```
-
 ## Authors
 
-* **Esther Muigai**  - [instagram-night](https://github.com/EstherMuigai/instagram-night)
+* **Esther Muigai**  - [awwwards](https://github.com/EstherMuigai/awwwards)
 
 
 ## License

@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_pic = models.ImageField(blank=True,upload_to = 'images/')
+    profile_pic = models.ImageField(blank=True,upload_to = 'images/',default = 'images/beauty1.jpg')
     bio = models.CharField(max_length = 255)
     job = models.CharField(max_length = 255)
 
@@ -21,25 +21,39 @@ class Project(models.Model):
     codelink = models.CharField(max_length =255,blank=False,null=False)
     description = models.CharField(max_length =255,blank=False,null=False)
     sitelink = models.CharField(max_length =255,blank=False,null=False)
+    user= models.ForeignKey(User,on_delete=models.CASCADE,blank=True,null=True)
     published = models.DateField("Date",blank=False,null=False)
-    features = models.ManyToManyField(features)
 
     def __str__(self):
         return self.project
 
 class ProjectPictures(models.Model):
-    name = models.CharField(max_length =255,blank=True,null=True)
-    pic = models.ImageField(upload_to = 'projects/',blank =True)
+    projectpicture = models.CharField(max_length =255,blank=True,null=True)
+    pic = models.ImageField(upload_to = 'projects/')
     project = models.ForeignKey(Project,on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.projectpicture
 
 
 class Score(models.Model):
-    category = models.CharField(max_length =255,blank=False,null=False)
+    SCORES = (
+        (1,1),
+        (2,2),
+        (3,3),
+        (4,4),
+        (5,5),
+        (6,6),
+        (7,7),
+    )
+    CATEGORY = (
+        ('Usability', 'Usability'),
+        ('Design' , 'Design'),
+        ('Content' , 'Content'),
+    )
+    category = models.CharField(max_length=1,choices=CATEGORY)
     project = models.ForeignKey(Project,on_delete=models.CASCADE)
-    score = models.IntegerField(default=0)
+    score = models.IntegerField(choices=SCORES)
 
     def __str__(self):
         return self.category
