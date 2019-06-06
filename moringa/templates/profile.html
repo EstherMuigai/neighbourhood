@@ -73,6 +73,7 @@
                         {% bootstrap_field field %}
                         {% endfor %}
                         <input type="submit" class="btn btn-primary" value="add profile">
+                    </form>
                 </div>
                 {% endif %}
             </div>
@@ -92,7 +93,7 @@
                         <img src="{{user.profile.neighbourhood.pic.url}}" class="img-fluid" style="height:300px;width:100%;" alt="...">
                 </div>
                 <div class="row">
-                        <a class="btn btn-primary" href="" data-toggle="modal" data-target="#biz" style="color:white;">Click to view businesses</a>
+                        <a class="btn btn-primary" href="" data-toggle="modal" data-target="#biz" style="color:white;">Click to view businesses in {{user.profile.neighbourhood}}</a>
                 <div class="modal fade" id="biz" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -112,6 +113,31 @@
                 </div>
                 </div>
             </div>
+            <div class="row">
+                    <form action="{%url 'profile' %}" method="post" enctype="multipart/form-data"
+                    style="color: white;width:100%;">
+                    {% csrf_token %}
+
+                    {% for field in postform %}
+                    {% bootstrap_field field %}
+                    {% endfor %}
+                    <input type="submit" class="btn btn-primary" value="post">
+                </form>
+            </div>
+            {% for post in posts %}
+            {% if post.neighbourhood.id == user.profile.neighbourhood.id %}
+            <div class="row" style="width:100%;margin-top:1%;">
+                <div class="card" style="width:100%;">
+                    <div class="card-header" style="background-color:#00A6FB;">
+                        <h4>@ {{post.user}}</h4>
+                    </div>
+                    <div class="card-body">
+                            <p>{{post.post}}</p>
+                        </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
         </div>
         {% endif %}
     </div>

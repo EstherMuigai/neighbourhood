@@ -8,6 +8,7 @@ from .models import Profile,Neighbourhood,Post,HoodDetails
 def profile(request):
     current_user=request.user
     details=HoodDetails.objects.all()
+    posts=Post.objects.all()
     if request.method == 'POST':
         form = ProfileForm(request.POST, request.FILES)
         postform = PostForm(request.POST, request.FILES)
@@ -16,14 +17,15 @@ def profile(request):
             profile.user = current_user
             profile.save()
         if postform.is_valid():
-            post = form.save(commit=False)
+            post = postform.save(commit=False)
             post.user = current_user
-            post.neighbourhood = current_user.neighbourhood
+            post.neighbourhood = current_user.profile.neighbourhood
             post.save()
     else:
         form = ProfileForm()
         postform = PostForm()
-    return render(request, 'profile.html',{"form":form,"postform":postform,"details":details})
+    return render(request, 'profile.html',{"form":form,"posts":posts,"postform":postform,"details":details})
 
 def timeline(request):
-    return render(request, 'timeline.html')
+    hoods=Neighbourhood.objects.all()
+    return render(request, 'timeline.html',{"hoods":hoods})
