@@ -7,11 +7,11 @@ class Neighbourhood(models.Model):
         ('Makongeni','Makongeni'),
         ('Kileleshwa','Kileleshwa'),
     )
-    neighbourhood = models.CharField(max_length=1,choices=HOODS)
+    neighbourhood = models.CharField(max_length=255,choices=HOODS)
     pic = models.ImageField(blank=True,upload_to = 'hoods/')
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.neighbourhood}'
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
