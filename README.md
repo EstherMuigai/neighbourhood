@@ -1,11 +1,12 @@
-# MoringaAwwwards Application
+# Neighbour Application
 
 An application where users can:
 *   Sign up
 *   Sign in (authentication)
-*   Upload projects
-*   Follow other users and see their pictures
-*   Like other users projects
+*   Sign into a neighbourhood
+*   View posts in the neighbourhood
+*   Post to the neighbourhood
+*   Change neighbourhood
 
 ## Getting Started
 
@@ -78,7 +79,7 @@ pip freeze
 ```
 ## Authors
 
-* **Esther Muigai**  - [awwwards](https://github.com/EstherMuigai/awwwards)
+* **Esther Muigai**  - [neighbourhood](https://neiba-hood.herokuapp.com/)
 
 
 ## License
