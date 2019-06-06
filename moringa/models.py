@@ -23,3 +23,16 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username}'
 
+class HoodDetails(models.Model):
+    TYPE = (
+        ('Contact','Contact'),
+        ('Business','Business'),
+    )
+    detail = models.CharField(max_length = 255)
+    detailtype = models.CharField(max_length = 255,choices=TYPE)
+    contact = models.CharField(max_length = 13)
+    neighbourhood = models.ForeignKey(Neighbourhood,on_delete=models.CASCADE,blank=True,null=True)
+
+    def __str__(self):
+        return f'{self.detail}'
+
